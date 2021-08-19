@@ -89,8 +89,11 @@ isOn = False
 
 while True:
     if(keyboard.is_pressed('`')) :
-        isOn = not isOn
+        isOn = True
     while isOn:
+        if(keyboard.is_pressed('`')) :
+            isOn = False
+            break
         if keyboard.is_pressed(key_r):
             pressEvent(key_r)
         if keyboard.is_pressed(key_t):
