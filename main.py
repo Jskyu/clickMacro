@@ -2,13 +2,10 @@ import keyboard
 import pyautogui as auto
 
 
+moveX = 0
+moveY = 0
 def pressEvent(key):
-    tempX = 0
-    tempY = 0
-    moveY = 0
-    moveX = 0
-
-    x, y = auto.position()
+    global moveX, moveY
     # 정사각형
     if key == key_r:
         moveX = 100
@@ -59,10 +56,12 @@ def pressEvent(key):
     elif key == key_k:
         moveX = 15
         moveY = 30
-
+def moveEvent():
+    x, y = auto.position()
     auto.click()
     tempX = x
     tempY = y
+    print("press W !! x : %d, y : %d", moveX, moveY)
     auto.moveTo(x + moveX, y + moveY)
     auto.click()
     auto.moveTo(tempX, tempY)
@@ -88,39 +87,71 @@ key_b = 'b'
 isOn = False
 
 while True:
-    if(keyboard.is_pressed('`')) :
+    if keyboard.read_key() == '`':
         isOn = True
+    if keyboard.read_key() == key_r:
+        pressEvent(key_r)
+    if keyboard.read_key() == key_t:
+        pressEvent(key_t)
+    if keyboard.read_key() == key_y:
+        pressEvent(key_y)
+    if keyboard.read_key() == key_u:
+        pressEvent(key_u)
+    if keyboard.read_key() == key_i:
+        pressEvent(key_i)
+    if keyboard.read_key() == key_z:
+        pressEvent(key_z)
+    if keyboard.read_key() == key_x:
+        pressEvent(key_x)
+    if keyboard.read_key() == key_c:
+        pressEvent(key_c)
+    if keyboard.read_key() == key_v:
+        pressEvent(key_v)
+    if keyboard.read_key() == key_b:
+        pressEvent(key_b)
+    if keyboard.read_key() == key_f:
+        pressEvent(key_f)
+    if keyboard.read_key() == key_g:
+        pressEvent(key_g)
+    if keyboard.read_key() == key_h:
+        pressEvent(key_h)
+    if keyboard.read_key() == key_j:
+        pressEvent(key_j)
+    if keyboard.read_key() == key_k:
+        pressEvent(key_k)
     while isOn:
-        if(keyboard.is_pressed('`')) :
+        if keyboard.read_key() == '`' :
             isOn = False
             break
-        if keyboard.is_pressed(key_r):
+        if keyboard.read_key() == 'w':
+            moveEvent()
+        if keyboard.read_key() == key_r:
             pressEvent(key_r)
-        if keyboard.is_pressed(key_t):
+        if keyboard.read_key() == key_t:
             pressEvent(key_t)
-        if keyboard.is_pressed(key_y):
+        if keyboard.read_key() == key_y:
             pressEvent(key_y)
-        if keyboard.is_pressed(key_u):
+        if keyboard.read_key() == key_u:
             pressEvent(key_u)
-        if keyboard.is_pressed(key_i):
+        if keyboard.read_key() == key_i:
             pressEvent(key_i)
-        if keyboard.is_pressed(key_z):
+        if keyboard.read_key() == key_z:
             pressEvent(key_z)
-        if keyboard.is_pressed(key_x):
+        if keyboard.read_key() == key_x:
             pressEvent(key_x)
-        if keyboard.is_pressed(key_c):
+        if keyboard.read_key() == key_c:
             pressEvent(key_c)
-        if keyboard.is_pressed(key_v):
+        if keyboard.read_key() == key_v:
             pressEvent(key_v)
-        if keyboard.is_pressed(key_b):
+        if keyboard.read_key() == key_b:
             pressEvent(key_b)
-        if keyboard.is_pressed(key_f):
+        if keyboard.read_key() == key_f:
             pressEvent(key_f)
-        if keyboard.is_pressed(key_g):
+        if keyboard.read_key() == key_g:
             pressEvent(key_g)
-        if keyboard.is_pressed(key_h):
+        if keyboard.read_key() == key_h:
             pressEvent(key_h)
-        if keyboard.is_pressed(key_j):
+        if keyboard.read_key() == key_j:
             pressEvent(key_j)
-        if keyboard.is_pressed(key_k):
+        if keyboard.read_key() == key_k:
             pressEvent(key_k)
