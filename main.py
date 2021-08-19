@@ -1,9 +1,11 @@
 import keyboard
 import pyautogui as auto
+import time
 
 
 moveX = 0
 moveY = 0
+
 def pressEvent(key):
     global moveX, moveY
     # 정사각형
@@ -56,15 +58,21 @@ def pressEvent(key):
     elif key == key_k:
         moveX = 15
         moveY = 30
+    print("Set x : {0}, y : {1}".format(moveX, moveY))
+
+
 def moveEvent():
     x, y = auto.position()
     auto.click()
     tempX = x
     tempY = y
-    print("press W !! x : %d, y : %d", moveX, moveY)
+    print("macro x : {0}, y : {1}".format(moveX, moveY))
     auto.moveTo(x + moveX, y + moveY)
     auto.click()
     auto.moveTo(tempX, tempY)
+
+
+key_w = 'w'
 
 key_r = 'r'
 key_t = 't'
@@ -86,72 +94,104 @@ key_b = 'b'
 
 isOn = False
 
+
 while True:
     if keyboard.read_key() == '`':
-        isOn = True
-    if keyboard.read_key() == key_r:
-        pressEvent(key_r)
-    if keyboard.read_key() == key_t:
-        pressEvent(key_t)
-    if keyboard.read_key() == key_y:
-        pressEvent(key_y)
-    if keyboard.read_key() == key_u:
-        pressEvent(key_u)
-    if keyboard.read_key() == key_i:
-        pressEvent(key_i)
-    if keyboard.read_key() == key_z:
-        pressEvent(key_z)
-    if keyboard.read_key() == key_x:
-        pressEvent(key_x)
-    if keyboard.read_key() == key_c:
-        pressEvent(key_c)
-    if keyboard.read_key() == key_v:
-        pressEvent(key_v)
-    if keyboard.read_key() == key_b:
-        pressEvent(key_b)
-    if keyboard.read_key() == key_f:
-        pressEvent(key_f)
-    if keyboard.read_key() == key_g:
-        pressEvent(key_g)
-    if keyboard.read_key() == key_h:
-        pressEvent(key_h)
-    if keyboard.read_key() == key_j:
-        pressEvent(key_j)
-    if keyboard.read_key() == key_k:
-        pressEvent(key_k)
-    while isOn:
-        if keyboard.read_key() == '`' :
+        if not isOn:
+            print("MACRO ON")
+            time.sleep(0.2)
+            isOn = True
+        elif isOn:
+            print("MACRO OFF")
+            time.sleep(0.2)
             isOn = False
-            break
-        if keyboard.read_key() == 'w':
-            moveEvent()
-        if keyboard.read_key() == key_r:
-            pressEvent(key_r)
-        if keyboard.read_key() == key_t:
-            pressEvent(key_t)
-        if keyboard.read_key() == key_y:
-            pressEvent(key_y)
-        if keyboard.read_key() == key_u:
-            pressEvent(key_u)
-        if keyboard.read_key() == key_i:
-            pressEvent(key_i)
-        if keyboard.read_key() == key_z:
-            pressEvent(key_z)
-        if keyboard.read_key() == key_x:
-            pressEvent(key_x)
-        if keyboard.read_key() == key_c:
-            pressEvent(key_c)
-        if keyboard.read_key() == key_v:
-            pressEvent(key_v)
-        if keyboard.read_key() == key_b:
-            pressEvent(key_b)
-        if keyboard.read_key() == key_f:
-            pressEvent(key_f)
-        if keyboard.read_key() == key_g:
-            pressEvent(key_g)
-        if keyboard.read_key() == key_h:
-            pressEvent(key_h)
-        if keyboard.read_key() == key_j:
-            pressEvent(key_j)
-        if keyboard.read_key() == key_k:
-            pressEvent(key_k)
+
+    if keyboard.is_pressed(key_r):
+        pressEvent(key_r)
+        continue
+    if keyboard.is_pressed(key_t):
+        pressEvent(key_t)
+        continue
+    if keyboard.is_pressed(key_y):
+        pressEvent(key_y)
+        continue
+    if keyboard.is_pressed(key_u):
+        pressEvent(key_u)
+        continue
+    if keyboard.is_pressed(key_i):
+        pressEvent(key_i)
+        continue
+    if keyboard.is_pressed(key_z):
+        pressEvent(key_z)
+        continue
+    if keyboard.is_pressed(key_x):
+        pressEvent(key_x)
+        continue
+    if keyboard.is_pressed(key_c):
+        pressEvent(key_c)
+        continue
+    if keyboard.is_pressed(key_v):
+        pressEvent(key_v)
+        continue
+    if keyboard.is_pressed(key_b):
+        pressEvent(key_b)
+        continue
+    if keyboard.is_pressed(key_f):
+        pressEvent(key_f)
+        continue
+    if keyboard.is_pressed(key_g):
+        pressEvent(key_g)
+        continue
+    if keyboard.is_pressed(key_h):
+        pressEvent(key_h)
+        continue
+    if keyboard.is_pressed(key_j):
+        pressEvent(key_j)
+        continue
+    if keyboard.is_pressed(key_k):
+        pressEvent(key_k)
+        continue
+    if keyboard.is_pressed(key_w) and isOn:
+        moveEvent()
+        continue 
+
+"""
+if keyboard.read_key() == '`' and not isOn:
+    print("MACRO ON")
+    isOn = True
+elif keyboard.read_key() == '`' and isOn:
+    print("MACRO OFF")
+    isOn = False
+if keyboard.is_pressed(key_r):
+    pressEvent(key_r)
+if keyboard.is_pressed(key_t):
+    pressEvent(key_t)
+if keyboard.is_pressed(key_y):
+    pressEvent(key_y)
+if keyboard.is_pressed(key_u):
+    pressEvent(key_u)
+if keyboard.is_pressed(key_i):
+    pressEvent(key_i)
+if keyboard.is_pressed(key_z):
+    pressEvent(key_z)
+if keyboard.is_pressed(key_x):
+    pressEvent(key_x)
+if keyboard.is_pressed(key_c):
+    pressEvent(key_c)
+if keyboard.is_pressed(key_v):
+    pressEvent(key_v)
+if keyboard.is_pressed(key_b):
+    pressEvent(key_b)
+if keyboard.is_pressed(key_f):
+    pressEvent(key_f)
+if keyboard.is_pressed(key_g):
+    pressEvent(key_g)
+if keyboard.is_pressed(key_h):
+    pressEvent(key_h)
+if keyboard.is_pressed(key_j):
+    pressEvent(key_j)
+if keyboard.is_pressed(key_k):
+    pressEvent(key_k)
+if keyboard.is_pressed(key_w) and isOn:
+    moveEvent()
+"""
