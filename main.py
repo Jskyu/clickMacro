@@ -3,58 +3,60 @@ import pyautogui as auto
 
 
 def pressEvent(key):
-    global tempX, tempY
-    global moveY, moveX
+    tempX = 0
+    tempY = 0
+    moveY = 0
+    moveX = 0
 
     x, y = auto.position()
     # 정사각형
-    if key == 'q':
+    if key == key_r:
         moveX = 100
         moveY = 100
-    elif key == 'w':
+    elif key == key_t:
         moveX = 70
         moveY = 70
-    elif key == 'e':
+    elif key == key_y:
         moveX = 50
         moveY = 50
-    elif key == 'r':
+    elif key == key_u:
         moveX = 40
         moveY = 40
-    elif key == 't':
+    elif key == key_i:
         moveX = 30
         moveY = 30
 
     #   가로 직사각형
-    elif key == 'z':
+    elif key == key_z:
         moveX = 100
-        moveY = 50
-    elif key == 'x':
+        moveY = 65
+    elif key == key_x:
         moveX = 80
-        moveY = 40
-    elif key == 'c':
+        moveY = 50
+    elif key == key_c:
         moveX = 60
-        moveY = 30
-    elif key == 'v':
+        moveY = 35
+    elif key == key_v:
         moveX = 40
         moveY = 20
-    elif key == 'b':
+    elif key == key_b:
         moveX = 30
         moveY = 15
 
     #   세로직사각형
-    elif key == '1':
+    elif key == key_f:
         moveX = 50
         moveY = 100
-    elif key == '2':
+    elif key == key_g:
         moveX = 40
         moveY = 80
-    elif key == '3':
+    elif key == key_h:
         moveX = 30
         moveY = 60
-    elif key == '4':
+    elif key == key_j:
         moveX = 20
         moveY = 40
-    elif key == '5':
+    elif key == key_k:
         moveX = 15
         moveY = 30
 
@@ -65,35 +67,57 @@ def pressEvent(key):
     auto.click()
     auto.moveTo(tempX, tempY)
 
+key_r = 'r'
+key_t = 't'
+key_y = 'y'
+key_u = 'u'
+key_i = 'i'
+
+key_f = 'f'
+key_g = 'g'
+key_h = 'h'
+key_j = 'j'
+key_k = 'k'
+
+key_z = 'z'
+key_x = 'x'
+key_c = 'c'
+key_v = 'v'
+key_b = 'b'
+
+isOn = False
 
 while True:
-    if keyboard.is_pressed('q'):
-        pressEvent('q')
-    if keyboard.is_pressed('w'):
-        pressEvent('w')
-    if keyboard.is_pressed('e'):
-        pressEvent('e')
-    if keyboard.is_pressed('r'):
-        pressEvent('r')
-    if keyboard.is_pressed('t'):
-        pressEvent('t')
-    if keyboard.is_pressed('z'):
-        pressEvent('z')
-    if keyboard.is_pressed('x'):
-        pressEvent('x')
-    if keyboard.is_pressed('c'):
-        pressEvent('c')
-    if keyboard.is_pressed('v'):
-        pressEvent('v')
-    if keyboard.is_pressed('b'):
-        pressEvent('b')
-    if keyboard.is_pressed('1'):
-        pressEvent('1')
-    if keyboard.is_pressed('2'):
-        pressEvent('2')
-    if keyboard.is_pressed('3'):
-        pressEvent('3')
-    if keyboard.is_pressed('4'):
-        pressEvent('4')
-    if keyboard.is_pressed('5'):
-        pressEvent('5')
+    if(keyboard.is_pressed('`')) :
+        isOn = not isOn
+    while isOn:
+        if keyboard.is_pressed(key_r):
+            pressEvent(key_r)
+        if keyboard.is_pressed(key_t):
+            pressEvent(key_t)
+        if keyboard.is_pressed(key_y):
+            pressEvent(key_y)
+        if keyboard.is_pressed(key_u):
+            pressEvent(key_u)
+        if keyboard.is_pressed(key_i):
+            pressEvent(key_i)
+        if keyboard.is_pressed(key_z):
+            pressEvent(key_z)
+        if keyboard.is_pressed(key_x):
+            pressEvent(key_x)
+        if keyboard.is_pressed(key_c):
+            pressEvent(key_c)
+        if keyboard.is_pressed(key_v):
+            pressEvent(key_v)
+        if keyboard.is_pressed(key_b):
+            pressEvent(key_b)
+        if keyboard.is_pressed(key_f):
+            pressEvent(key_f)
+        if keyboard.is_pressed(key_g):
+            pressEvent(key_g)
+        if keyboard.is_pressed(key_h):
+            pressEvent(key_h)
+        if keyboard.is_pressed(key_j):
+            pressEvent(key_j)
+        if keyboard.is_pressed(key_k):
+            pressEvent(key_k)
