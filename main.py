@@ -44,13 +44,13 @@ def pressEvent(key):
 
     #   세로직사각형
     elif key == key_f:
-        moveX = 50
+        moveX = 65
         moveY = 100
     elif key == key_g:
-        moveX = 40
+        moveX = 50
         moveY = 80
     elif key == key_h:
-        moveX = 30
+        moveX = 35
         moveY = 60
     elif key == key_j:
         moveX = 20
@@ -66,7 +66,7 @@ def moveEvent():
     auto.click()
     tempX = x
     tempY = y
-    print("macro x : {0}, y : {1}".format(moveX, moveY))
+    print("Execution x : {0}, y : {1}".format(moveX, moveY))
     auto.moveTo(x + moveX, y + moveY)
     auto.click()
     auto.moveTo(tempX, tempY)
@@ -92,11 +92,13 @@ key_c = 'c'
 key_v = 'v'
 key_b = 'b'
 
+key_execution = '`'
+
 isOn = False
 
 
 while True:
-    if keyboard.read_key() == '`':
+    if keyboard.read_key() == key_execution:
         if not isOn:
             print("MACRO ON")
             time.sleep(0.2)
@@ -153,45 +155,4 @@ while True:
         continue
     if keyboard.is_pressed(key_w) and isOn:
         moveEvent()
-        continue 
-
-"""
-if keyboard.read_key() == '`' and not isOn:
-    print("MACRO ON")
-    isOn = True
-elif keyboard.read_key() == '`' and isOn:
-    print("MACRO OFF")
-    isOn = False
-if keyboard.is_pressed(key_r):
-    pressEvent(key_r)
-if keyboard.is_pressed(key_t):
-    pressEvent(key_t)
-if keyboard.is_pressed(key_y):
-    pressEvent(key_y)
-if keyboard.is_pressed(key_u):
-    pressEvent(key_u)
-if keyboard.is_pressed(key_i):
-    pressEvent(key_i)
-if keyboard.is_pressed(key_z):
-    pressEvent(key_z)
-if keyboard.is_pressed(key_x):
-    pressEvent(key_x)
-if keyboard.is_pressed(key_c):
-    pressEvent(key_c)
-if keyboard.is_pressed(key_v):
-    pressEvent(key_v)
-if keyboard.is_pressed(key_b):
-    pressEvent(key_b)
-if keyboard.is_pressed(key_f):
-    pressEvent(key_f)
-if keyboard.is_pressed(key_g):
-    pressEvent(key_g)
-if keyboard.is_pressed(key_h):
-    pressEvent(key_h)
-if keyboard.is_pressed(key_j):
-    pressEvent(key_j)
-if keyboard.is_pressed(key_k):
-    pressEvent(key_k)
-if keyboard.is_pressed(key_w) and isOn:
-    moveEvent()
-"""
+        continue
