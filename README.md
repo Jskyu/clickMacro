@@ -18,7 +18,7 @@ pyinstaller main.py
 
 ## Tech/Library Used
 
-- `Tech - Python 3.96`
+- `Python 3.96`
 - `Library - keyboard`
 - `Library - pyautogui`
 
@@ -35,31 +35,26 @@ W : Macro Execution
 
 ## Macro Range Setting
 
-__정사각형__
+__가로 길이__
 ```
-R : x + 100, y + 100
-T : x + 70, y + 70
-Y : x + 50, y + 50
-U : x + 40, y + 40
-I : x + 30, y + 30
-```
-
-__직각 사각형(가로)__
-```
-Z : x + 100, y + 65
-X : x + 80, y + 50
-C : x + 60, y + 35
-V : x + 40, y + 20
-B : x + 30, y + 15
+R : 150
+T : 130
+Y : 110
+U : 90
+I : 70
+O : 50
+P : 30
 ```
 
-__직각 사각형(세로)__
+__세로 길이__
 ```
-F : x + 65, y + 100
-G : x + 50, y + 80
-H : x + 35, y + 60
-J : x + 20, y + 40
-K : x + 15, y + 30
+F : 135
+G : 115
+H : 95
+J : 75
+K : 55
+L : 35
+; : 15
 ```
 
 ## Made

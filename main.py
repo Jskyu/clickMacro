@@ -1,63 +1,57 @@
+from platform import version
 import keyboard
 import pyautogui as auto
 import time
 
 
+VERSION = '1.21'
+
+DEFINE_X = 150
+DEFINE_Y = 135
 moveX = 0
 moveY = 0
 
+print("Click Macro ver {0}".format(VERSION))
+print("https://github.com/Jskyu/clickMacro")
+print("ON/OFF : ` ")
+print("Set X : R, T, Y, U, I, O, P")
+print("Set Y : F, G, H, J, K, L, ;")
+print("Excution : W")
+
 def pressEvent(key):
     global moveX, moveY
-    # 정사각형
+    # 가로 설정
     if key == key_r:
-        moveX = 100
-        moveY = 100
+        moveX = DEFINE_X
     elif key == key_t:
-        moveX = 70
-        moveY = 70
+        moveX = DEFINE_X - 20
     elif key == key_y:
-        moveX = 50
-        moveY = 50
+        moveX = DEFINE_X - 40
     elif key == key_u:
-        moveX = 40
-        moveY = 40
+        moveX = DEFINE_X - 60
     elif key == key_i:
-        moveX = 30
-        moveY = 30
+        moveX = DEFINE_X - 80
+    elif key == key_o:
+        moveX = DEFINE_X - 100
+    elif key == key_p:
+        moveX = DEFINE_X - 120
 
-    #   가로 직사각형
-    elif key == key_z:
-        moveX = 100
-        moveY = 65
-    elif key == key_x:
-        moveX = 80
-        moveY = 50
-    elif key == key_c:
-        moveX = 60
-        moveY = 35
-    elif key == key_v:
-        moveX = 40
-        moveY = 20
-    elif key == key_b:
-        moveX = 30
-        moveY = 15
-
-    #   세로직사각형
+    # 세로 설정
     elif key == key_f:
-        moveX = 65
-        moveY = 100
+        moveY = DEFINE_Y
     elif key == key_g:
-        moveX = 50
-        moveY = 80
+        moveY = DEFINE_Y - 20
     elif key == key_h:
-        moveX = 35
-        moveY = 60
+        moveY = DEFINE_Y - 40
     elif key == key_j:
-        moveX = 20
-        moveY = 40
+        moveY = DEFINE_Y - 60
     elif key == key_k:
-        moveX = 15
-        moveY = 30
+        moveY = DEFINE_Y - 80
+    elif key == key_l:
+        moveY = DEFINE_Y - 100
+    elif key == key_semiClone:
+        moveY = DEFINE_Y - 120
+
     print("Set x : {0}, y : {1}".format(moveX, moveY))
 
 
@@ -79,18 +73,22 @@ key_t = 't'
 key_y = 'y'
 key_u = 'u'
 key_i = 'i'
+key_o = 'o'
+key_p = 'p'
 
 key_f = 'f'
 key_g = 'g'
 key_h = 'h'
 key_j = 'j'
 key_k = 'k'
+key_l = 'j'
+key_semiClone = ';'
 
-key_z = 'z'
-key_x = 'x'
-key_c = 'c'
-key_v = 'v'
-key_b = 'b'
+# key_z = 'z'
+# key_x = 'x'
+# key_c = 'c'
+# key_v = 'v'
+# key_b = 'b'
 
 key_execution = '`'
 
@@ -123,21 +121,13 @@ while True:
     if keyboard.is_pressed(key_i):
         pressEvent(key_i)
         continue
-    if keyboard.is_pressed(key_z):
-        pressEvent(key_z)
+    if keyboard.is_pressed(key_o):
+        pressEvent(key_o)
         continue
-    if keyboard.is_pressed(key_x):
-        pressEvent(key_x)
+    if keyboard.is_pressed(key_p):
+        pressEvent(key_p)
         continue
-    if keyboard.is_pressed(key_c):
-        pressEvent(key_c)
-        continue
-    if keyboard.is_pressed(key_v):
-        pressEvent(key_v)
-        continue
-    if keyboard.is_pressed(key_b):
-        pressEvent(key_b)
-        continue
+    
     if keyboard.is_pressed(key_f):
         pressEvent(key_f)
         continue
@@ -152,6 +142,12 @@ while True:
         continue
     if keyboard.is_pressed(key_k):
         pressEvent(key_k)
+        continue
+    if keyboard.is_pressed(key_l):
+        pressEvent(key_l)
+        continue
+    if keyboard.is_pressed(key_semiClone):
+        pressEvent(key_semiClone)
         continue
     if keyboard.is_pressed(key_w) and isOn:
         moveEvent()
