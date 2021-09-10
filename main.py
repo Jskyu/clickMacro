@@ -4,7 +4,7 @@ import pyautogui as auto
 import time
 
 
-VERSION = '2.0'
+VERSION = '2.1'
 
 DEFINE_X = 80
 DEFINE_Y = 50
@@ -35,30 +35,23 @@ isOn = False
 
 def pressEvent(key):
     global moveX, moveY
-    isKey = False
     
     # 가로 설정
     if key == key_r:
         moveX = moveX + 10
-        isKey = True
     elif key == key_f:
         moveX = moveX - 10
-        isKey = True
 
     # 세로 설정
     elif key == key_t:
         moveY = moveY + 8
-        isKey = True
     elif key == key_g:
         moveY = moveY - 8
-        isKey = True
     elif key == key_reset:
         moveX = DEFINE_X
         moveY = DEFINE_Y
-        isKey = True
 
-    if isKey:
-        print("Set x : {0}, y : {1}".format(moveX, moveY))
+    print("Set x : {0}, y : {1}".format(moveX, moveY))
 
 
 def moveEvent():
@@ -73,8 +66,7 @@ def moveEvent():
 
 
 while True:
-    nowKey = keyboard.read_key()
-    if nowKey == key_execution:
+    if keyboard.read_key() == key_execution:
         if not isOn:
             print("MACRO ON")
             isOn = True
@@ -85,10 +77,19 @@ while True:
             time.sleep(0.2)
         continue
 
-    if nowKey == key_w and isOn:
-        moveEvent()
+    if keyboard.is_pressed(key_r):
+        pressEvent(key_r)
         continue
-    
-    pressEvent(nowKey)
-    time.sleep(0.15)
-    
+    if keyboard.is_pressed(key_f):
+        pressEvent(key_f)
+        continue
+    if keyboard.is_pressed(key_t):
+        pressEvent(key_t)
+        continue
+    if keyboard.is_pressed(key_g):
+        pressEvent(key_g)
+        continue
+
+    if keyboard.is_pressed(key_w) and isOn:
+        moveEvent()
+        continue 
