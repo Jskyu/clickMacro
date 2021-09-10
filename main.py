@@ -22,35 +22,35 @@ def pressEvent(key):
     global moveX, moveY
     # 가로 설정
     if key == key_r:
-        moveX = DEFINE_X
+        moveX = DEFINE_X - 120
     elif key == key_t:
-        moveX = DEFINE_X - 20
+        moveX = DEFINE_X - 100
     elif key == key_y:
-        moveX = DEFINE_X - 40
+        moveX = DEFINE_X - 80
     elif key == key_u:
         moveX = DEFINE_X - 60
     elif key == key_i:
-        moveX = DEFINE_X - 80
+        moveX = DEFINE_X - 40 
     elif key == key_o:
-        moveX = DEFINE_X - 100
+        moveX = DEFINE_X - 20
     elif key == key_p:
-        moveX = DEFINE_X - 120
+        moveX = DEFINE_X
 
     # 세로 설정
     elif key == key_f:
-        moveY = DEFINE_Y
+        moveY = DEFINE_Y - 120
     elif key == key_g:
-        moveY = DEFINE_Y - 20
+        moveY = DEFINE_Y - 100
     elif key == key_h:
-        moveY = DEFINE_Y - 40
+        moveY = DEFINE_Y - 80
     elif key == key_j:
         moveY = DEFINE_Y - 60
     elif key == key_k:
-        moveY = DEFINE_Y - 80
+        moveY = DEFINE_Y - 40
     elif key == key_l:
-        moveY = DEFINE_Y - 100
+        moveY = DEFINE_Y - 20
     elif key == key_semiClone:
-        moveY = DEFINE_Y - 120
+        moveY = DEFINE_Y
 
     print("Set x : {0}, y : {1}".format(moveX, moveY))
 
