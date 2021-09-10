@@ -77,12 +77,11 @@ while True:
     if nowKey == key_execution:
         if not isOn:
             print("MACRO ON")
-            time.sleep(0.2)
             isOn = True
         elif isOn:
             print("MACRO OFF")
-            time.sleep(0.2)
             isOn = False
+        time.sleep(0.2)
         continue
 
     if nowKey == key_w and isOn:
@@ -90,5 +89,5 @@ while True:
         continue
     
     pressEvent(nowKey)
-    time.sleep(0.1)
+    time.sleep(0.2)
     
