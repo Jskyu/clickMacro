@@ -89,7 +89,9 @@ while True:
     if keyboard.is_pressed(key_g):
         pressEvent(key_g)
         continue
-
+    if keyboard.is_pressed(key_reset):
+        pressEvent(key_reset)
+        continue
     if keyboard.is_pressed(key_w) and isOn:
         moveEvent()
         continue 
