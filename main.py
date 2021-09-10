@@ -90,5 +90,5 @@ while True:
         continue
     
     pressEvent(nowKey)
-    time.sleep(0.2)
+    time.sleep(0.15)
     
