@@ -31,30 +31,10 @@ __핵심 키__
 ```
 ` : Macro ON, OFF
 W : Macro Execution
-```
-
-## Macro Range Setting
-
-__가로 길이__
-```
-R : 30
-T : 50
-Y : 70
-U : 90
-I : 110
-O : 130
-P : 150
-```
-
-__세로 길이__
-```
-F : 15
-G : 35
-H : 55
-J : 75
-K : 95
-L : 115
-; : 135
+R : X + 10
+F : X - 10
+T : Y + 8
+G : Y - 8
 ```
 
 ## Made
