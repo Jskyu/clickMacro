@@ -81,7 +81,7 @@ key_g = 'g'
 key_h = 'h'
 key_j = 'j'
 key_k = 'k'
-key_l = 'j'
+key_l = 'l'
 key_semiClone = ';'
 
 # key_z = 'z'
