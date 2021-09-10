@@ -78,10 +78,11 @@ while True:
         if not isOn:
             print("MACRO ON")
             isOn = True
+            time.sleep(0.2)
         elif isOn:
             print("MACRO OFF")
             isOn = False
-        time.sleep(0.2)
+            time.sleep(0.2)
         continue
 
     if nowKey == key_w and isOn:
