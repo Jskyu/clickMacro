@@ -1,4 +1,3 @@
-from platform import version
 import keyboard
 import pyautogui as auto
 import time
