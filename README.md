@@ -35,6 +35,7 @@ R : X + 10
 F : X - 10
 T : Y + 8
 G : Y - 8
+C : Reset X, Y
 ```
 
 ## Made
